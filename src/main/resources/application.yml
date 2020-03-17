@@ -1,0 +1,21 @@
+#服务配置
+#spring配置
+#1应用配置
+#2数据库连接池
+#3 JPA
+server:
+  port: 8080
+spring:
+  mvc:
+    static-path-pattern: /**
+  application:
+    name: med-shop
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/medicine?serverTimezone=UTC #根据自己的数据库修改
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: true

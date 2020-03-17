@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <title>Home</title>
+</head>
+<body>
+<div>
+    <div th:each="medicine:${list}">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a th:href="@{/details(id=${medicine.id})}">
+                        <img th:src="@{/images/{type}(type=${medicine.picture})}" th:alt="${medicine.ingredient}">
+                    </a>
+                    <div class="caption">
+                        <h3 th:text="${medicine.name}">Thumbnail label</h3>
+                        <p th:text="${medicine.mainFunction}">...</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
