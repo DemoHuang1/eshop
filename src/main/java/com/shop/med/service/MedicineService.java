@@ -22,6 +22,24 @@ public class MedicineService {
     public void add(Medicine medicine){
         String id=idWorker.nextId()+"";
         medicine.setId(id);
+//        if(null==medicine.getMedCharacter()){  不需要这些代码
+//            medicine.setMedCharacter("");
+//        }
+//        if(null==medicine.getCheckTime()){
+//            medicine.setCheckTime("");
+//        }
+//        if(null==medicine.getCoEffect()){
+//            medicine.setCoEffect("");
+//        }
+//        if(null==medicine.getExpirationDate()){
+//            medicine.setExpirationDate("");
+//        }
+//        if(null==medicine.getIngredient()){
+//            medicine.setIngredient("");
+//        }
+//        if(null==medicine.getMainFunc()){
+//            medicine.setMainFunc("");
+//        }
         medicineDao.save(medicine);  //未做重复检查
     }
 
@@ -32,8 +50,8 @@ public class MedicineService {
     public void update(Medicine medicine){
         Medicine tmp=medicineDao.findById(medicine.getId()).get();
         tmp.setName(medicine.getName());
-        tmp.setCharacter(medicine.getCharacter());
-        tmp.setMainFunction(medicine.getMainFunction());
+        tmp.setMedCharacter(medicine.getMedCharacter());
+        tmp.setMainFunc(medicine.getMainFunc());
         tmp.setPicture(medicine.getPicture());  //修改图片、名称、特性这些，后期有需要可以添加修改项
         medicineDao.save(tmp);
     }

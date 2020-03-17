@@ -23,7 +23,7 @@ public class Medicine implements Serializable {
 
     private String name;  //药品名称
 
-    private String type;  //药品类型
+    private String medType;  //药品类型
 
     private String picture;  //图片位置
 
@@ -37,9 +37,9 @@ public class Medicine implements Serializable {
 
     private String ingredient;  //成分
 
-    private String character;  //特性
+    private String medCharacter;  //特性
 
-    private String mainFunction;  //主要功效
+    private String mainFunc;  //主要功效
 
     private String usageDosage;  //用法用量
 

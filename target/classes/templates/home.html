@@ -16,12 +16,18 @@
                     </a>
                     <div class="caption">
                         <h3 th:text="${medicine.name}">Thumbnail label</h3>
-                        <p th:text="${medicine.mainFunction}">...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <p th:text="${medicine.mainFunc}">...</p>
+                        <p>
+                            <a th:href="@{/details(id=${medicine.id})}" class="btn btn-primary" role="button">查看详情</a>
+                            <a th:href="@{/details/delete(id=${medicine.id})}" class="btn btn-default" role="button">删除</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div>
+        <a th:href="@{/home/add}" class="btn btn-primary" role="button">添加商品</a>
     </div>
 </div>
 </body>
