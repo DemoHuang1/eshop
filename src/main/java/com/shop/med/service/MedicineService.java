@@ -1,8 +1,9 @@
 package com.shop.med.service;
 
 import com.shop.med.dao.MedicineDao;
+import com.shop.med.dao.MedicineTypeDao;
 import com.shop.med.entity.Medicine;
-import com.shop.med.utils.IdWorker;
+import com.shop.med.entity.MedicineType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,32 +16,10 @@ public class MedicineService {
     private MedicineDao medicineDao;
 
     @Autowired
-    private IdWorker idWorker;
-    /*
-    增删改查
-     */
+    private MedicineTypeDao medicineTypeDao;
+
     public void add(Medicine medicine){
-        String id=idWorker.nextId()+"";
-        medicine.setId(id);
-//        if(null==medicine.getMedCharacter()){  不需要这些代码
-//            medicine.setMedCharacter("");
-//        }
-//        if(null==medicine.getCheckTime()){
-//            medicine.setCheckTime("");
-//        }
-//        if(null==medicine.getCoEffect()){
-//            medicine.setCoEffect("");
-//        }
-//        if(null==medicine.getExpirationDate()){
-//            medicine.setExpirationDate("");
-//        }
-//        if(null==medicine.getIngredient()){
-//            medicine.setIngredient("");
-//        }
-//        if(null==medicine.getMainFunc()){
-//            medicine.setMainFunc("");
-//        }
-        medicineDao.save(medicine);  //未做重复检查
+        medicineDao.save(medicine);
     }
 
     public void delete(Medicine medicine){
@@ -55,16 +34,19 @@ public class MedicineService {
         tmp.setPicture(medicine.getPicture());  //修改图片、名称、特性这些，后期有需要可以添加修改项
         medicineDao.save(tmp);
     }
+    public List<MedicineType> findAllType(){
+        return medicineTypeDao.findAll();
+    }
 
-    public Medicine findById(String id){
+    public Medicine findById(int id){
         return medicineDao.findById(id).get();
     }
 
-    public List<Medicine> findAll(){
+    public List<Medicine> findAllMedicine(){
         return medicineDao.findAll();
     }
 
-    public void deleteById(String id){
+    public void deleteById(int id){
         medicineDao.deleteById(id);
     }
 }

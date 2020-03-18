@@ -10,7 +10,7 @@
 
     <packaging>jar</packaging>
     <name>med_shop</name>
-    <description>曾式药店</description>
+    <description>药店</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -56,11 +56,14 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
+            <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.integration</groupId>

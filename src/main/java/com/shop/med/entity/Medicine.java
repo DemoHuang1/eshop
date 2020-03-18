@@ -1,16 +1,12 @@
 package com.shop.med.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "medicinedetail")
+@Table(name = "medicinedetail")//默认表明为类名
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +15,8 @@ public class Medicine implements Serializable {
     private static final long serialVersionUID=594829320797158219L;
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String name;  //药品名称
 
@@ -58,4 +55,5 @@ public class Medicine implements Serializable {
     private String expirationDate;  //保质期
 
     private String checkTime;  //点击次数  //暂时用string后面使用的时候转double或者添加转换函数
+
 }

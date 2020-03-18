@@ -21,3 +21,32 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea/.name
+.idea/encodings.xml
+.idea/eshop.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+med_shop.iml
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-archiver/pom.properties
+target/classes/templates/index.html
+target/classes/static/js/jquery.js
+target/classes/static/js/index.js
+target/classes/static/images/third_logo1.jpg
+target/classes/static/images/special_left.png
+target/classes/static/images/nav_logo.png
+target/classes/static/images/nav_hoverlogo.png
+target/classes/static/images/logo.jpg
+target/classes/static/images/icon_white.png
+target/classes/static/images/floor.png
+target/classes/static/images/flip_2.jpg
+target/classes/static/images/flip_1.jpg
+target/classes/static/css/index.css
+target/classes/META-INF/eshop.kotlin_module
+target/classes/application.yml
+target/classes/application.yml
+.idea/compiler.xml
+.idea/uiDesigner.xml
+.idea/workspace.xml
