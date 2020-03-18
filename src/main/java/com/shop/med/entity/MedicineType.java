@@ -18,6 +18,6 @@ public class MedicineType implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    public int index;
+    public String index;
     public String name;
 }

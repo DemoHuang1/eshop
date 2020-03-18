@@ -1061,7 +1061,7 @@ div.jqZoomPup{z-index : 999; visibility : hidden; position : absolute; top:0px; 
 	font-size: 21px;
 	text-indent: 85px;
 	letter-spacing: 1px;
-	background-image: url(../images/floor.png);
+	background-image: url(/images/floor.png);
 	background-repeat: no-repeat;
 	color: #ffffff;
 }

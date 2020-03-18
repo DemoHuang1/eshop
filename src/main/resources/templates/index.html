@@ -93,42 +93,42 @@
         </div>
         <ul class="navigation">
             <li data-floor="70" floorid="1" class="">
-                <a class="etitle1" href="http://beautycn.cn/index.html#70">
+                <a class="etitle1" href="#70">
                     1F
                 </a>
-                <a href="http://beautycn.cn/index.html#70" class="etitle">
+                <a href="#70" class="etitle">
                     黄体支持
                 </a>
             </li>
             <li data-floor="81" floorid="2" class="">
-                <a class="etitle1" href="http://beautycn.cn/index.html#81">
+                <a class="etitle1" href="#81">
                     2F
                 </a>
-                <a href="http://beautycn.cn/index.html#81" class="etitle">
+                <a href="#81" class="etitle">
                     孕期止血
                 </a>
             </li>
             <li data-floor="72" floorid="3" class="">
-                <a class="etitle1" href="http://beautycn.cn/index.html#72">
+                <a class="etitle1" href="#72">
                     3F
                 </a>
-                <a href="http://beautycn.cn/index.html#72" class="etitle">
+                <a href="#72" class="etitle">
                     孕期腹痛
                 </a>
             </li>
             <li data-floor="71" floorid="4" class="">
-                <a class="etitle1" href="http://beautycn.cn/index.html#71">
+                <a class="etitle1" href="#71">
                     4F
                 </a>
-                <a href="http://beautycn.cn/index.html#71" class="etitle">
+                <a href="#71" class="etitle">
                     NK高
                 </a>
             </li>
             <li data-floor="74" floorid="5" class="">
-                <a class="etitle1" href="http://beautycn.cn/index.html#74">
+                <a class="etitle1" href="#74">
                     5F
                 </a>
-                <a href="http://beautycn.cn/index.html#74" class="etitle">
+                <a href="#74" class="etitle">
                     HCY高
                 </a>
             </li>
@@ -179,7 +179,9 @@
                     <div class="tab_content">
                         <div>
                             <ul> <!-- 10个数据 -->
-                                <li><a href="http://beautycn.cn/etyy/2019/1203/194.html">景优同 儿童回春颗粒 1g*12袋/盒</a></li>
+                                <li th:each="medicine:${list}" th:if="${medicineStat.index} lt '10'">
+                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}"></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -189,51 +191,22 @@
     </div>
 
     <div class="w1200">
-        <div id="special" class="special">
-            <div class="tab">
-                <ul>
-                    <li tab-target="0" color="#fa462d" class="bg-left">黄体支持</li>
-                </ul>
-
-                <div class="tab-line">
-                    <div class="row">
-                        <span class="span1 bg-orange"></span>
-                    </div>
-                    <div class="tab-line-arrow" style="left: 93px; border-bottom-color: rgb(250, 70, 45);"></div>
-                </div>
-            </div>
-
-            <div class="product">
-                <ul class="cong_ul">
-                    <li> <!-- 6个数据 -->
-                        <a href="http://beautycn.cn/etyy/2019/1203/194.html">
-                            <img src="./杭州海丽健医疗科技有限公司-主页_files/1-1Q01915062Y45.jpg" alt="">
-                        </a>
-
-                        <a href="http://beautycn.cn/etyy/2019/1203/194.html" class="cong_a text-overflow">景优同 儿童回春颗粒
-                            1g*12袋</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
         <div fid="70" floor="1" class="floor">
-            <div class="row">
+            <div class="row" >
                 <div class="span1">
-                    <h2 class="bg-1f">XXXX</h2>
+                    <h2 class="bg-1f" th:text="${type_list[0].getName()}">XXXX</h2>
                 </div>
 
                 <div class="span3">
                     <div class="product">
                         <ul>
-                            <li>      <!-- 12个数据 -->
-                                <a href="http://beautycn.cn/etyy/2019/1203/194.html">
-                                    <img src="./杭州海丽健医疗科技有限公司-主页_files/1-1Q01915062Y45.jpg" alt="">
+                            <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[0].getIndex())) }" >      <!-- 12个数据 -->
+                                <a th:href="@{/detail(id=${medicine.id})}">
+                                    <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a href="http://beautycn.cn/etyy/2019/1203/194.html" class="text-overflow">景优同
-                                        儿童回春颗粒 1g*12袋</a>
+                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
 
@@ -246,20 +219,19 @@
         <div fid="81" floor="2" class="floor">
             <div class="row">
                 <div class="span1">
-                    <h2 class="bg-1f">XXXX</h2>
+                    <h2 class="bg-1f" th:text="${type_list[1].getName()}">XXXX</h2>
                 </div>
 
                 <div class="span3">
                     <div class="product">
                         <ul> <!-- 12个数据 -->
-                            <li>
-                                <a href="http://beautycn.cn/xnxg/2019/1203/198.html">
-                                    <img src="./杭州海丽健医疗科技有限公司-主页_files/1-1Q01915115G39.jpg" alt="">
+                            <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[1].getIndex())) }">
+                                <a th:href="@{/detail(id=${medicine.id})}">
+                                    <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a href="http://beautycn.cn/xnxg/2019/1203/198.html" class="text-overflow">雷氏 丹参片
-                                        60片*1瓶/盒</a>
+                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
 
@@ -273,21 +245,20 @@
         <div fid="72" floor="3" class="floor">
             <div class="row">
                 <div class="span1">
-                    <h2 class="bg-1f">XXXX</h2>
+                    <h2 class="bg-1f" th:text="${type_list[2].getName()}">XXXX</h2>
 
                 </div>
 
                 <div class="span3">
                     <div class="product">
                         <ul> <!-- 12个数据 -->
-                            <li>
-                                <a href="http://beautycn.cn/xhxt/2019/1203/202.html">
-                                    <img src="./杭州海丽健医疗科技有限公司-主页_files/1-1Q0191529544D.jpg" alt="">
+                            <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[2].getIndex())) }">
+                                <a th:href="@{/detail(id=${medicine.id})}">
+                                    <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a href="http://beautycn.cn/xhxt/2019/1203/202.html" class="text-overflow">同仁堂 香连化滞丸
-                                        6g*10丸/盒</a>
+                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
                         </ul>
@@ -299,20 +270,19 @@
         <div fid="71" floor="4" class="floor">
             <div class="row">
                 <div class="span1">
-                    <h2 class="bg-1f">XXXX</h2>
+                    <h2 class="bg-1f" th:text="${type_list[3].getName()}">XXXX</h2>
                 </div>
 
                 <div class="span3">
                     <div class="product">
                         <ul> <!-- 12个数据 -->
-                            <li>
-                                <a href="http://beautycn.cn/wgyy/2019/1203/206.html">
-                                    <img src="./杭州海丽健医疗科技有限公司-主页_files/1-1Q019153452448.jpg" alt="">
+                            <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[3].getIndex())) }">
+                                <a th:href="@{/detail(id=${medicine.id})}">
+                                    <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a href="http://beautycn.cn/wgyy/2019/1203/206.html" class="text-overflow">乐仁堂
-                                        清喉利咽颗粒 5g*10袋</a>
+                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
 
@@ -325,20 +295,19 @@
         <div fid="74" floor="5" class="floor">
             <div class="row">
                 <div class="span1">
-                    <h2 class="bg-1f">风湿骨科</h2>
+                    <h2 class="bg-1f" th:text="${type_list[4].getName()}">XXXX</h2>
                 </div>
 
                 <div class="span3">
                     <div class="product">
                         <ul> <!-- 12个数据 -->
-                            <li>
-                                <a href="http://beautycn.cn/fsgk/2019/1203/210.html">
-                                    <img src="./杭州海丽健医疗科技有限公司-主页_files/1-1Q01915394S15.jpg" alt="">
+                            <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[4].getIndex())) }">
+                                <a th:href="@{/detail(id=${medicine.id})}">
+                                    <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a href="http://beautycn.cn/fsgk/2019/1203/210.html" class="text-overflow">陈李济
-                                        舒筋健腰丸45g*10瓶/盒</a>
+                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
                         </ul>
@@ -382,161 +351,7 @@
     </div>
 </div>
 
-<script src="/js/jquery.js" type="text/javascript"></script>
-
-<script src="/js/index.js" type="text/javascript"></script>
-
-<audio controls="controls" style="display: none;"></audio>
-<div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
-    <div class="xl-chrome-ext-bar__logo"></div>
-
-    <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
-    <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
-</div>
+<script src="/js/jquery.js" type="text/javascript" />
+<script src="/js/index.js" type="text/javascript" />
 </body>
-<style type="text/css">#yddContainer {
-    display: block;
-    font-family: Microsoft YaHei;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    top: -4px;
-    left: -4px;
-    font-size: 12px;
-    border: 1px solid
-}
-
-#yddTop {
-    display: block;
-    height: 22px
-}
-
-#yddTopBorderlr {
-    display: block;
-    position: static;
-    height: 17px;
-    padding: 2px 28px;
-    line-height: 17px;
-    font-size: 12px;
-    color: #5079bb;
-    font-weight: bold;
-    border-style: none solid;
-    border-width: 1px
-}
-
-#yddTopBorderlr .ydd-sp {
-    position: absolute;
-    top: 2px;
-    height: 0;
-    overflow: hidden
-}
-
-.ydd-icon {
-    left: 5px;
-    width: 17px;
-    padding: 0px 0px 0px 0px;
-    padding-top: 17px;
-    background-position: -16px -44px
-}
-
-.ydd-close {
-    right: 5px;
-    width: 16px;
-    padding-top: 16px;
-    background-position: left -44px
-}
-
-#yddKeyTitle {
-    float: left;
-    text-decoration: none
-}
-
-#yddMiddle {
-    display: block;
-    margin-bottom: 10px
-}
-
-.ydd-tabs {
-    display: block;
-    margin: 5px 0;
-    padding: 0 5px;
-    height: 18px;
-    border-bottom: 1px solid
-}
-
-.ydd-tab {
-    display: block;
-    float: left;
-    height: 18px;
-    margin: 0 5px -1px 0;
-    padding: 0 4px;
-    line-height: 18px;
-    border: 1px solid;
-    border-bottom: none
-}
-
-.ydd-trans-container {
-    display: block;
-    line-height: 160%
-}
-
-.ydd-trans-container a {
-    text-decoration: none;
-}
-
-#yddBottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 22px;
-    line-height: 22px;
-    overflow: hidden;
-    background-position: left -22px
-}
-
-.ydd-padding010 {
-    padding: 0 10px
-}
-
-#yddWrapper {
-    color: #252525;
-    z-index: 10001;
-    background: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);
-}
-
-#yddContainer {
-    background: #fff;
-    border-color: #4b7598
-}
-
-#yddTopBorderlr {
-    border-color: #f0f8fc
-}
-
-#yddWrapper .ydd-sp {
-    background-image: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)
-}
-
-#yddWrapper a, #yddWrapper a:hover, #yddWrapper a:visited {
-    color: #50799b
-}
-
-#yddWrapper .ydd-tabs {
-    color: #959595
-}
-
-.ydd-tabs, .ydd-tab {
-    background: #fff;
-    border-color: #d5e7f3
-}
-
-#yddBottom {
-    color: #363636
-}
-
-#yddWrapper {
-    min-width: 250px;
-    max-width: 400px;
-}</style>
 </html>

@@ -1053,11 +1053,11 @@ $(document).ready(function () {
         o++, o == $("#lunbonum li").length && (o = 0), i(o)
     }
 
-    var e = ($("#lunbonum li"), $("#lunhuanback .item")), o = ($("#lunhuanback div img"), $(".lunhuancenter b"), 0),
+    var e = ($("#lunbonum li"), $("#flipback .item")), o = ($("#flipback div img"), $(".flipcenter b"), 0),
         a = [];
     $.each(e, function (i, t) {
         a.push("<li></li>")
-    }), $("#lunbonum").html(a.join("")), $("#lunbonum li:first").addClass("lunboone"), $("#lunhuanback div:first").css("opacity", "1").siblings().css("z-index", "0"), $("#lunbonum li").each(function (t) {
+    }), $("#lunbonum").html(a.join("")), $("#lunbonum li:first").addClass("lunboone"), $("#flipback div:first").css("opacity", "1").siblings().css("z-index", "0"), $("#lunbonum li").each(function (t) {
         $(this).on("mouseover", function () {
             i(t)
         })
