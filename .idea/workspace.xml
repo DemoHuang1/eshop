@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c18a9bb-d254-469e-8659-f278e1d87b5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/utils/MyWebConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/manager.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/owl.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/manage_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/manager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/medicine_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/medicine_type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/med/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/controller/DetailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/med/controller/MedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/controller/MedicineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/med/dao/MedicineDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/dao/MedicineDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/med/dao/MedicineTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/dao/MedicineTypeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/med/service/MedicineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/med/service/MedicineService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +141,7 @@
       <workItem from="1584588635530" duration="5852000" />
       <workItem from="1584599569378" duration="10053000" />
       <workItem from="1584612167602" duration="4206000" />
-      <workItem from="1584633227614" duration="828000" />
+      <workItem from="1584633227614" duration="1440000" />
     </task>
     <servers />
   </component>

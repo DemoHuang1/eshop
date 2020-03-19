@@ -20,13 +20,35 @@ public class MedicineController {
     @Autowired
     private MedicineService service;
 
-    @GetMapping({"","index"})
+    @GetMapping({"/index"})
     public String home(Model model){
         List<Medicine> list=service.findAllMedicine();
         model.addAttribute("list",list);  //主页面显示的内容，list包含了所有要展示的药品列表
         List<MedicineType> typeList = service.findAllType();
         model.addAttribute("type_list",typeList);
         return "index";
+    }
+
+    @GetMapping("/type")
+    public String type(@RequestParam("index")String index, Model model){
+        String name = service.findTypeNameByIndex(index);
+        model.addAttribute("type",name);
+        List<Medicine> list = service.findMedicinesByType(index);
+        model.addAttribute("list",list);
+        List<MedicineType> typeList = service.findAllType();
+        model.addAttribute("type_list",typeList);
+        return "medicine_type";
+    }
+
+    @GetMapping("/detail")
+    public String detail(@RequestParam("id")int id,Model model){
+        List<MedicineType> typeList = service.findAllType();
+        model.addAttribute("type_list",typeList);
+        Medicine detail=service.findById(id);
+        model.addAttribute("detail",detail);
+        List<Medicine> recommend = service.recommendMedicins();
+        model.addAttribute("recommend",recommend);
+        return "medicine_detail";
     }
 
     @GetMapping("/add")

@@ -59,3 +59,8 @@ target/classes/application.yml
 .idea/compiler.xml
 .idea/workspace.xml
 target/classes/application.yml
+target/classes/application.yml
+target/classes/static/css/owl.theme.css
+target/classes/static/css/search.css
+target/classes/templates/medicine_detail.html
+target/classes/templates/medicine_type.html

@@ -55,10 +55,9 @@
                 <div class="dd" style="display: block;">
                     <div class="dd-inner">
                         <ul>
-                            <li th:each="type:${type_list}" th:data-action="${typeStat.index}"
-                                th:if="${typeStat.index} lt '5'">
+                            <li th:each="type:${type_list}" th:data-action="${typeStat.index}" th:if="${typeStat.index} lt '5'">
                                 <h3>
-                                    <a th:href="@{/index/(${type.index})}" th:text="${type.name}">黄体支持</a>
+                                    <a th:href="@{/type(index = ${type.index})}" th:text="${type.name}">黄体支持</a>
                                 </h3>
 
                                 <i></i>
@@ -73,7 +72,7 @@
                     <li><a th:href="@{index}">首页</a></li>
 
                     <li th:each="type:${type_list}" th:data-action="${typeStat.index}" th:if="${typeStat.index} lt '5'">
-                        <a th:href="@{/index/(${type.index})}" th:text="${type.name}">黄体支持</a>
+                        <a th:href="@{/type(index = ${type.index})}" th:text="${type.name}">黄体支持</a>
                     </li>
 
 
@@ -191,6 +190,7 @@
     </div>
 
     <div class="w1200">
+
         <div fid="70" floor="1" class="floor">
             <div class="row" >
                 <div class="span1">
@@ -351,7 +351,7 @@
     </div>
 </div>
 
-<script src="/js/jquery.js" type="text/javascript" />
-<script src="/js/index.js" type="text/javascript" />
+<script src="/js/jquery.js" type="text/javascript" ></script>
+<script src="/js/index.js" type="text/javascript" ></script>
 </body>
 </html>

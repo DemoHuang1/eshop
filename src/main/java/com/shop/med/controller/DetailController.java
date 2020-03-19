@@ -8,19 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/details")
+@RequestMapping("/detail")
 public class DetailController {
 
     @Autowired
     private MedicineService service;
 
-    //根据id显示药品
-    @GetMapping(value = "")
-    public String showDetail(@RequestParam("id")int id, Model model){
-        Medicine detail=service.findById(id);
-        model.addAttribute("detail",detail);
-        return "detail";
-    }
 
     //根据id删除药品
     @GetMapping(value = "/delete")
@@ -35,6 +28,7 @@ public class DetailController {
         service.add(medicine);
         return "redirect:/index";
     }
+<<<<<<< HEAD
     //修改药品
     @PostMapping("/update")
     public String update(@RequestParam("id")int id,Medicine medicine){
@@ -42,4 +36,7 @@ public class DetailController {
         service.update(medicine);
         return "redirect:/index";  // return "redirect:/update?id="+id;
     }
+=======
+
+>>>>>>> c5a366e1302d43fff240720884f4cc72d73ed739
 }

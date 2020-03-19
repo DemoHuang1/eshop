@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>福保孕堂医疗服务（云南）有限公司</title>
+    <link rel="stylesheet" href="/css/owl.theme.css">
+</head>
+
+<body>
+<!--------------head---------------->
+<div class="header_fix">
+    <div class="header-bar">
+        <div class="w1200 clear" style="height:28px;">
+            <ul class="fl xinxifu">
+                <li>欢迎来到 福保孕堂医疗服务（云南）有限公司 网站</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <div class="header-body">
+        <div class="w1200">
+            <div class="logo after_apend">
+                <a th:href="@{index}" class="logo-link">
+                    <img src="/images/logo.jpg" width="218" alt="">
+                </a>
+            </div>
+
+            <div class="search">
+                <div class="form">
+                    <input class="searchbox" maxlength="64" placeholder="药品" value="" text="text">
+                    <button class="searchbtn">搜索<i></i></button>
+                </div>
+            </div>
+
+            <div class="hotwords">
+            </div>
+        </div>
+    </div>
+
+    <div class="header-nav">
+        <div class="w1200">
+            <div class="categorys">
+                <div class="dt">
+                    <a>
+                        <i></i>
+                        药品库
+                    </a>
+                </div>
+
+                <div class="dd" style="display: block;">
+                    <div class="dd-inner">
+                        <ul>
+                            <li th:each="type:${type_list}" th:data-action="${typeStat.index}" th:if="${typeStat.index} lt '5'">
+                                <h3>
+                                    <a th:href="@{/type(index = ${type.index})}" th:text="${type.name}">黄体支持</a>
+                                </h3>
+
+                                <i></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navitems">
+                <ul>
+                    <li><a th:href="@{index}">首页</a></li>
+
+                    <li th:each="type:${type_list}" th:data-action="${typeStat.index}" th:if="${typeStat.index} lt '5'">
+                        <a th:href="@{/type(index = ${type.index})}" th:text="${type.name}">黄体支持</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------head end---------------->
+
+<div class="product">
+    <div class="breadcrumbs">
+        <div class="w1200 report_list"></div>
+    </div>
+
+    <div class="w1200">
+        <div id="intro" class="product-intro">
+            <div class="preview" style="text-align: center;">
+                <div class="spec" id="show"
+                     style="border: 1px solid #ddd; display: table-cell; vertical-align: middle;">
+                    <img th:src="${detail.getPicture()}" width="380" height="380"
+                         class="img_big_show" alt="">
+                </div>
+
+                <div class="spec-scroll">
+                    <a class="prev">&lt;</a> <a class="next">&gt;</a>
+                    <div class="buttom_img items">
+                        <ul>
+                            <li>
+                                <img th:src="${detail.getPicture()}" width="60" height="60" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner">
+                <h1 th:text="${detail.getName()}">XXXX</h1>
+
+                <div id="instructions" class="switchable tab_con" style="display: block;">
+                    <table id="instruc_list">
+                        <tbody>
+                        <tr>
+                            <td width="100" align="left">商品名</td>
+                            <td width="770px" th:text="${detail.getName()}">XXXX</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">通用名</td>
+                            <td width="770px" th:text="${detail.getName()}">XXXXX</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">拼音名</td>
+                            <td width="770px" th:text="${detail.getName()}">XXXXX</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">规格</td>
+                            <td width="770px" th:text="${detail.getName()}">XXXX</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">批准文号</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">生产厂家</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">成分</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">性状</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">功能主治</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">用法用量</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">不良反应</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">禁忌</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">注意事项</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">药物相互作用</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">贮藏</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">生产企业</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">包装</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="left">保质期</td>
+                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span1">
+                <div class="related">
+                    <h2>大家关注的商品</h2>
+
+                    <div class="link">
+                        <ul>
+                            <li th:each="medicine:${recommend}">
+                                <a th:href="@{/detail(id = ${medicine.getId()})}">
+                                    <img th:src="${medicine.getPicture()}" alt=""  style="width: 160px;">
+                                    <p style="font-size: 13px;margin-top: -10px;text-align: center;" th:text="${medicine.getName()}">XXXX</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+    <div class="w1200">
+        <div class="copyright">
+            <p>公司名称：福保孕堂医疗服务（云南）有限公司</p>
+            <p>公司地址：云南省昆明市五华区茭菱路88号创意英国维多利亚花园4幢温莎大道29号</p>
+            <p>公司固话：0571-88811540</p>
+            <p><a href="http://www.beian.miit.gov.cn/">X ICP备xxxxxxxx号-1</a></p>
+            <p>福保孕堂医疗服务（云南）有限公司 版权所有</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
