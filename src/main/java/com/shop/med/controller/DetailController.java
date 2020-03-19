@@ -8,19 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/details")
+@RequestMapping("/detail")
 public class DetailController {
 
     @Autowired
     private MedicineService service;
 
-    //根据id显示药品
-    @GetMapping(value = "")
-    public String showDetail(@RequestParam("id")int id, Model model){
-        Medicine detail=service.findById(id);
-        model.addAttribute("detail",detail);
-        return "detail";
-    }
 
     //根据id删除药品
     @GetMapping(value = "/delete")

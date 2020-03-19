@@ -5,9 +5,13 @@ import com.shop.med.dao.MedicineTypeDao;
 import com.shop.med.entity.Medicine;
 import com.shop.med.entity.MedicineType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class MedicineService {
@@ -34,6 +38,30 @@ public class MedicineService {
         tmp.setPicture(medicine.getPicture());  //修改图片、名称、特性这些，后期有需要可以添加修改项
         medicineDao.save(tmp);
     }
+
+    public List<Medicine> recommendMedicins(){
+        List<Medicine> list = new ArrayList<>();
+
+        int count = 0;
+        while (list.size()<5 && count < 5){
+            int type = new Random(System.currentTimeMillis()).nextInt(5)+1;
+            list.addAll(medicineDao.findAllByMedType(type+""));
+            count++;
+        }
+        return list;
+    }
+
+    public List<Medicine> findMedicinesByType(String type){
+
+        List<Medicine> list =medicineDao.findAllByMedType(type);
+        return list;
+    }
+
+    public String findTypeNameByIndex(String index){
+        String name = medicineTypeDao.getTypeNameByIndex(index);
+        return name;
+    }
+
     public List<MedicineType> findAllType(){
         return medicineTypeDao.findAll();
     }
