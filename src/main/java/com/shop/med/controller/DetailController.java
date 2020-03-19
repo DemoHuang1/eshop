@@ -28,11 +28,5 @@ public class DetailController {
         service.add(medicine);
         return "redirect:/home";
     }
-    //修改药品
-    @PostMapping("/update")
-    public String update(@RequestParam("id")int id,Medicine medicine){
-        medicine.setId(id);
-        service.update(medicine);
-        return "redirect:/home";  //此处可以跳转到修改后的详情，没这样写，如果要这样写再改，累
-    }
+
 }

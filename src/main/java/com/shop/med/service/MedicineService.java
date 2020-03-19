@@ -32,11 +32,10 @@ public class MedicineService {
 
     public void update(Medicine medicine){
         Medicine tmp=medicineDao.findById(medicine.getId()).get();
-        tmp.setName(medicine.getName());
-        tmp.setMedCharacter(medicine.getMedCharacter());
-        tmp.setMainFunc(medicine.getMainFunc());
-        tmp.setPicture(medicine.getPicture());  //修改图片、名称、特性这些，后期有需要可以添加修改项
-        medicineDao.save(tmp);
+        //不能被更新的两项输入，以免覆盖。
+        medicine.setCheckTime(tmp.getCheckTime());
+        medicine.setMedType(tmp.getMedType());
+        medicineDao.save(medicine);
     }
 
     public List<Medicine> recommendMedicins(){

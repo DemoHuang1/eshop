@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>福保孕堂医疗服务（云南）有限公司</title>
+    <link rel="stylesheet" href="/css/owl.theme.css">
+
+</head>
+<body>
+<div class="product">
+    <div class="breadcrumbs">
+        <div class="w1200 report_list"></div>
+    </div>
+
+    <div class="w1200">
+        <div id="intro" class="product-intro">
+            <div class="preview" style="text-align: center;">
+                <div class="spec" id="show"
+                     style="border: 1px solid #ddd; display: table-cell; vertical-align: middle;">
+                    <img th:src="${detail.getPicture()}" width="380" height="380" class="img_big_show" alt="" id="showImg" >
+
+
+                </div>
+                <form id="imageForm" method="post" enctype="multipart/form-data" th:action="@{/uploadImage(id=${detail.getId()})}">
+                    <input type="file"
+                           onchange="upload(this)" name="image"/>
+                </form>
+            </div>
+
+            <div class="inner">
+                <h1 th:text="${detail.getName()}">XXXX</h1>
+
+                <form enctype="multipart/form-data" method="post" th:action="@{/update(id = ${detail.getId()})}">
+                    <div id="instructions" class="switchable tab_con" style="display: block;">
+                        <table id="instruc_list">
+                            <tbody>
+                            <tr>
+                                <td width="100" align="left">商品名</td>
+                                <td width="770px"><input width="750px" type="text" name="name" th:value="${detail.getName()}"/></td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">通用名</td>
+                                <td width="770px"><input width="750px" type="text" name="commonName"
+                                                         th:value="${detail.getCommonName()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">规格</td>
+                                <td width="770px"><input width="750px" type="text" name="specification"
+                                                         th:value="${detail.getSpecification()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">批准文号</td>
+                                <td width="770px"><input width="750px" type="text" name="approvalNumber"
+                                                         th:value="${detail.getApprovalNumber()}"/></td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">生产厂家</td>
+                                <td width="770px"><input width="750px" type="text" name="manufacturer"
+                                                         th:value="${detail.getManufacturer()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">成分</td>
+                                <td width="770px"><input width="750px" type="text" name="ingredient"
+                                                         th:value="${detail.getIngredient()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">性状</td>
+                                <td width="770px"><input width="750px" type="text" name="medCharacter"
+                                                         th:value="${detail.getMedCharacter()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">功能主治</td>
+                                <td width="770px"><input width="750px" type="text" name="mainFunc"
+                                                         th:value="${detail.getMainFunc()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">用法用量</td>
+                                <td width="770px"><input width="750px" type="text" name="usageDosage"
+                                                         th:value="${detail.getUsageDosage()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">不良反应</td>
+                                <td width="770px"><input width="750px" type="text" name="untowardEffect"
+                                                         th:value="${detail.getUntowardEffect()}"/></td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">禁忌</td>
+                                <td width="770px"><input width="750px" type="text"  name="taboo"
+                                                         th:value="${detail.getTaboo()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">注意事项</td>
+                                <td width="770px"><input width="750px" type="text" name="attention"
+                                                         th:value="${detail.getAttention()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">药物相互作用</td>
+                                <td width="770px"><input width="750px" type="text" name="coEffect"
+                                                         th:value="${detail.getCoEffect()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">贮藏</td>
+                                <td width="770px"><input width="750px" type="text" name="storage"
+                                                         th:value="${detail.getStorage()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">生产企业</td>
+                                <td width="770px"><input width="750px" type="text" name="manufacturer"
+                                                         th:value="${detail.getManufacturer()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">包装</td>
+                                <td width="770px"><input width="750px" type="text" name="packaging"
+                                                         th:value="${detail.getPackaging()}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left">保质期</td>
+                                <td width="770px"><input width="750px" type="text" name="expirationDate"
+                                                         th:value="${detail.getExpirationDate()}"/></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="submit" value="更新" />
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="/js/admin.js" type="text/javascript"></script>
+</body>
+</html>

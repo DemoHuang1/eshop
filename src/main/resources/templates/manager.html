@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>福保孕堂医疗服务（云南）有限公司</title>
+    <link rel="stylesheet" href="/css/manager.css">
+</head>
+<body>
+<div class="index">
+    <div class="w1200">
+
+        <div class="floor">
+            <div class="row">
+                <div class="span1">
+                    <h2 class="bg-1f" >所有药品</h2>
+                </div>
+
+                <div class="span3">
+                    <div class="product" >
+                        <ul>
+                            <li th:each="medicine:${list}">
+                                <a th:href="@{/manage_medicine(id=${medicine.id})}">
+                                    <img th:src="${medicine.getPicture()}" alt="">
+                                </a>
+
+                                <div class="floor_tit_min">
+                                    <a th:href="@{/manage_medicine(id=${medicine.id})}" th:text="${medicine.getName()}"
+                                       class="text-overflow">XXXX</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
