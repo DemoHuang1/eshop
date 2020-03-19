@@ -180,7 +180,7 @@
                         <div>
                             <ul> <!-- 10个数据 -->
                                 <li th:each="medicine:${list}" th:if="${medicineStat.index} lt '10'">
-                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}"></a>
+                                    <a th:href="@{/details(id=${medicine.id})}" th:text="${medicine.getName()}"></a>
                                 </li>
                             </ul>
                         </div>
@@ -201,12 +201,12 @@
                     <div class="product">
                         <ul>
                             <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[0].getIndex())) }" >      <!-- 12个数据 -->
-                                <a th:href="@{/detail(id=${medicine.id})}">
+                                <a th:href="@{/details(id=${medicine.id})}">
                                     <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
+                                    <a th:href="@{/details(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
 
@@ -226,12 +226,12 @@
                     <div class="product">
                         <ul> <!-- 12个数据 -->
                             <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[1].getIndex())) }">
-                                <a th:href="@{/detail(id=${medicine.id})}">
+                                <a th:href="@{/details(id=${medicine.id})}">
                                     <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
+                                    <a th:href="@{/details(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
 
@@ -253,12 +253,12 @@
                     <div class="product">
                         <ul> <!-- 12个数据 -->
                             <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[2].getIndex())) }">
-                                <a th:href="@{/detail(id=${medicine.id})}">
+                                <a th:href="@{/details(id=${medicine.id})}">
                                     <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
+                                    <a th:href="@{/details(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
                         </ul>
@@ -277,12 +277,12 @@
                     <div class="product">
                         <ul> <!-- 12个数据 -->
                             <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[3].getIndex())) }">
-                                <a th:href="@{/detail(id=${medicine.id})}">
+                                <a th:href="@{/details(id=${medicine.id})}">
                                     <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
+                                    <a th:href="@{/details(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
 
@@ -302,12 +302,12 @@
                     <div class="product">
                         <ul> <!-- 12个数据 -->
                             <li th:each="medicine:${list}" th:if="${(medicine.getMedType()!=null)and(#strings.contains(medicine.getMedType(),type_list[4].getIndex())) }">
-                                <a th:href="@{/detail(id=${medicine.id})}">
+                                <a th:href="@{/details(id=${medicine.id})}">
                                     <img th:src="${medicine.getPicture()}" alt="">
                                 </a>
 
                                 <div class="floor_tit_min">
-                                    <a th:href="@{/detail(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
+                                    <a th:href="@{/details(id=${medicine.id})}" th:text="${medicine.getName()}" class="text-overflow">XXXX</a>
                                 </div>
                             </li>
                         </ul>

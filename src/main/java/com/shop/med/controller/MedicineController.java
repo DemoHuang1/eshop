@@ -41,5 +41,4 @@ public class MedicineController {
         model.addAttribute("medId",id);
         return "updateMedicine";
     }
-
 }
