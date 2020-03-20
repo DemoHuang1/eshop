@@ -40,7 +40,7 @@ public class MedicineController {
         return "medicine_type";
     }
 
-    @GetMapping("/detail")
+    @GetMapping("/details")
     public String detail(@RequestParam("id")int id,Model model){
         List<MedicineType> typeList = service.findAllType();
         model.addAttribute("type_list",typeList);

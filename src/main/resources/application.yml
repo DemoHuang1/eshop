@@ -17,7 +17,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/eshop?serverTimezone=UTC #根据自己的数据库修改
     username: root
-    password: root
+    password: Zk641200
   jpa:
     database: mysql
     show-sql: true
