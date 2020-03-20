@@ -46,7 +46,7 @@ public class MedicineController {
         model.addAttribute("type_list",typeList);
         Medicine detail=service.findById(id);
         model.addAttribute("detail",detail);
-        List<Medicine> recommend = service.recommendMedicins();
+        List<Medicine> recommend = service.recommendMedicins(detail.getMedType());
         model.addAttribute("recommend",recommend);
         return "medicine_detail";
     }

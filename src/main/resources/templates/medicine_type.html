@@ -110,14 +110,14 @@
                             <li th:each="medicine:${list}">
                                 <div class="wrap">
                                     <div class="items">
-                                        <a th:href="@{/detail(id = ${medicine.id})}">
+                                        <a th:href="@{/details(id = ${medicine.id})}">
                                             <img th:src="${medicine.getPicture()}" alt="">
                                         </a>
 
-                                        <a th:href="@{/detail(id = ${medicine.id})}" th:text="${medicine.getName()}" class="name">XXX</a>
+                                        <a th:href="@{/details(id = ${medicine.id})}" th:text="${medicine.getName()}" class="name">XXX</a>
 
-                                        <p th:text="${medicine.getName()}">
-                                            <span class="opr" > </span>
+                                        <p >
+                                            <span class="opr" th:text="${medicine.getName()}" > </span>
                                         </p>
                                     </div>
                                 </div>

@@ -38,15 +38,17 @@ public class MedicineService {
         medicineDao.save(medicine);
     }
 
-    public List<Medicine> recommendMedicins(){
+    public List<Medicine> recommendMedicins(String type){
         List<Medicine> list = new ArrayList<>();
-
-        int count = 0;
-        while (list.size()<5 && count < 5){
-            int type = new Random(System.currentTimeMillis()).nextInt(5)+1;
-            list.addAll(medicineDao.findAllByMedType(type+""));
-            count++;
+        if(type!=null){
+            String[] types = type.split(",");
+            List<Medicine> result = medicineDao.findAllByMedType(types[0]);
+            for(int i = 0 ; i < 4; i++){
+                list.add(result.get(i));
+            }
         }
+
+
         return list;
     }
 

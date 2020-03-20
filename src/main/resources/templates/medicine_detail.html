@@ -121,71 +121,67 @@
                         </tr>
                         <tr>
                             <td width="100" align="left">通用名</td>
-                            <td width="770px" th:text="${detail.getName()}">XXXXX</td>
-                        </tr>
-                        <tr>
-                            <td width="100" align="left">拼音名</td>
-                            <td width="770px" th:text="${detail.getName()}">XXXXX</td>
+                            <td width="770px" th:text="${detail.getCommonName()}">XXXXX</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">规格</td>
-                            <td width="770px" th:text="${detail.getName()}">XXXX</td>
+                            <td width="770px" th:text="${detail.getSpecification()}">XXXX</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">批准文号</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxx</td>
+                            <td width="770px" th:text="${detail.getApprovalNumber()}">xxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">生产厂家</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getManufacturer()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">成分</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getIngredient()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">性状</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getMedCharacter()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">功能主治</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getMainFunc()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">用法用量</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getUsageDosage()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">不良反应</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getUntowardEffect()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">禁忌</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getTaboo()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">注意事项</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxx</td>
+                            <td width="770px" th:text="${detail.getAttention()}">xxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">药物相互作用</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getCoEffect()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">贮藏</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxxx</td>
+                            <td width="770px" th:text="${detail.getStorage()}">xxxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">生产企业</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getManufacturer()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">包装</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getPackaging()}">xxxxx</td>
                         </tr>
                         <tr>
                             <td width="100" align="left">保质期</td>
-                            <td width="770px" th:text="${detail.getName()}">xxxxx</td>
+                            <td width="770px" th:text="${detail.getExpirationDate()}">xxxxx</td>
                         </tr>
 
                         </tbody>
@@ -199,10 +195,10 @@
                 <div class="related">
                     <h2>大家关注的商品</h2>
 
-                    <div class="link">
+                    <div class="link" style="text-overflow: ellipsis;" >
                         <ul>
                             <li th:each="medicine:${recommend}">
-                                <a th:href="@{/detail(id = ${medicine.getId()})}">
+                                <a th:href="@{/details(id = ${medicine.getId()})}">
                                     <img th:src="${medicine.getPicture()}" alt=""  style="width: 160px;">
                                     <p style="font-size: 13px;margin-top: -10px;text-align: center;" th:text="${medicine.getName()}">XXXX</p>
                                 </a>
